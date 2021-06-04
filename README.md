@@ -1,2 +1,4 @@
 # myblog-proto
-Contain Protocol Buffers definitions for using in myblog-* projects
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+Protocol Buffers definitions for providing blogging service

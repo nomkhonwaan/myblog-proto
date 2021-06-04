@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package myblog.proto.blog;
+
+import "google/protobuf/empty.proto";
+import "proto/blog/post.proto";
+import "proto/blog/taxonomy.proto";
+
+// The blog service definition.
+service BlogService {
+    rpc ListCategories (google.protobuf.Empty) returns (ListCategoriesResponse);
+    rpc ListPublishedPosts (ListPublishedPostsRequest) returns (ListPublishedPostsResponse);
+    rpc ListTaxonomyPublishedPosts (ListTaxonomyPublishedPostsRequest) returns (ListTaxonomyPublishedPostsResponse);
+}
+
+message ListPublishedPostsRequest {
+    uint32 offset = 1;
+    uint32 limit = 2;
+}
+
+message ListPublishedPostsResponse {
+    repeated Post posts = 1;
+}
+
+message ListCategoriesResponse {
+    repeated myblog.proto.blog.Taxonomy categories = 1;
+}
+
+message ListTaxonomyPublishedPostsRequest {
+    myblog.proto.blog.Taxonomy taxonomies = 1;
+    uint32 offset = 2;
+    uint32 limit = 3;
+}
+
+message ListTaxonomyPublishedPostsResponse {
+    repeated Post posts = 1;
+}
