@@ -11,5 +11,10 @@ message Taxonomy {
   // Valid url string composes with name and id
   string slug = 3;
   // Type of the term e.g. category or tag
-  string type = 4;
+  TaxonomyType type = 4;
+}
+
+enum TaxonomyType {
+    Category = 0;
+    Tag = 1;
 }
