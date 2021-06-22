@@ -27,7 +27,7 @@ message ListCategoriesResponse {
 }
 
 message ListTaxonomyPublishedPostsRequest {
-    myblog.proto.blog.Taxonomy taxonomies = 1;
+    myblog.proto.blog.Taxonomy taxonomy = 1;
     uint32 offset = 2;
     uint32 limit = 3;
 }
