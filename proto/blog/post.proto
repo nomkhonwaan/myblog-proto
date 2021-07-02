@@ -37,9 +37,9 @@ message Post {
   // List of attachments (image, video, document, etc.) are belonging to the post
   repeated myblog.proto.storage.File attachments = 12;
   // Date-time that the post was created
-  google.protobuf.Timestamp created_at = 14;
+  google.protobuf.Timestamp created_at = 13;
   // Date-time that the post was updated
-  google.protobuf.Timestamp updated_at = 15;
+  google.protobuf.Timestamp updated_at = 14;
 }
 
 enum PostStatus {
