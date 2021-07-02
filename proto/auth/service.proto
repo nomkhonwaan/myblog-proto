@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package myblog.proto.auth;
+
+import "proto/auth/user.proto";
+
+// The authentication and authorization services definition.
+service AuthService {
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+}
+
+message CreateUserRequest {
+    myblog.proto.auth.User user = 1;
+}
+
+message CreateUserResponse {
+    myblog.proto.auth.User user = 1;
+}
