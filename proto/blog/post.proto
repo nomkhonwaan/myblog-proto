@@ -34,12 +34,10 @@ message Post {
   repeated Taxonomy tags = 10;
   // A featured image to be shown at the archive page as a cover image
   myblog.proto.storage.File featured_image = 11;
-  // List of attachments (image, video, document, etc.) are belonging to the post
-  repeated myblog.proto.storage.File attachments = 12;
   // Date-time that the post was created
-  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp created_at = 12;
   // Date-time that the post was updated
-  google.protobuf.Timestamp updated_at = 14;
+  google.protobuf.Timestamp updated_at = 13;
 }
 
 enum PostStatus {
