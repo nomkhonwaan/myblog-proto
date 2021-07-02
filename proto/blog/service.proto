@@ -5,12 +5,16 @@ package myblog.proto.blog;
 import "google/protobuf/empty.proto";
 import "proto/blog/post.proto";
 import "proto/blog/taxonomy.proto";
+import "proto/discussion/comment.proto";
+import "proto/storage/file.proto";
 
 // The blog service definition.
 service BlogService {
     rpc ListCategories (google.protobuf.Empty) returns (ListCategoriesResponse);
     rpc ListPublishedPosts (ListPublishedPostsRequest) returns (ListPublishedPostsResponse);
     rpc ListTaxonomyPublishedPosts (ListTaxonomyPublishedPostsRequest) returns (ListTaxonomyPublishedPostsResponse);
+    rpc ListPostComments (ListPostCommentsRequest) returns (ListPostCommentsResponse);
+    rpc ListPostAttachments (ListPostAttachmentsRequest) returns (ListPostAttachmentsResponse);
 }
 
 message ListPublishedPostsRequest {
@@ -34,4 +38,22 @@ message ListTaxonomyPublishedPostsRequest {
 
 message ListTaxonomyPublishedPostsResponse {
     repeated Post posts = 1;
+}
+
+message ListPostCommentsRequest {
+    myblog.proto.blog.Post post = 1;
+    uint32 offset = 2;
+    uint32 limit = 3;
+}
+
+message ListPostCommentsResponse {
+    repeated myblog.proto.discussion.Comment comments = 1;
+}
+
+message ListPostAttachmentsRequest {
+    myblog.proto.blog.Post post = 1;
+}
+
+message ListPostAttachmentsResponse {
+    repeated myblog.proto.storage.File attachments = 1;
 }

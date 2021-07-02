@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package myblog.proto.discussion;
+
+import "proto/discussion/comment.proto";
+
+// The discussion service definition.
+service DiscussionService {
+    rpc CreateComment (CreateCommentRequest) returns (CreateCommentResponse);
+}
+
+message CreateCommentRequest {
+    myblog.proto.discussion.Comment comment = 1;
+}
+
+message CreateCommentResponse {
+    myblog.proto.discussion.Comment comment = 1;
+}

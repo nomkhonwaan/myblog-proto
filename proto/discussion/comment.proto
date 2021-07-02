@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package myblog.proto.discussion;
+
+import "google/protobuf/timestamp.proto";
+import "proto/auth/user.proto";
+
+// A written remark expressing an opinion or reaction.
+message Comment {
+    // Identifier of the comment 
+    string id = 1;
+    // Status of the comment which could be...
+    // - Published
+    // - Deleted
+    CommentStatus status = 2;
+    // Content of the comment in plain text format
+    string text = 3;
+    // A commentator
+    myblog.proto.auth.User author = 4;
+    // A parent of the comment, this could be null
+    Comment parent = 5;
+    // List of comments were replied to this comment
+    repeated Comment children = 6;
+    // Date-time that the comment was created
+    google.protobuf.Timestamp created_at = 7;
+    // Date-time that the comment was updated
+    google.protobuf.Timestamp updated_at = 8;
+}
+
+enum CommentStatus {
+    Published = 0;
+    Deleted = 1;
+}
