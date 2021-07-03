@@ -10,9 +10,9 @@ service AuthService {
 }
 
 message CreateUserRequest {
-    myblog.proto.auth.User user = 1;
+    User user = 1;
 }
 
 message CreateUserResponse {
-    myblog.proto.auth.User user = 1;
+    User user = 1;
 }
