@@ -8,14 +8,12 @@ import "google/protobuf/timestamp.proto";
 message User {
     // Identifier of the user
     string id = 1;
-    // Auth0 generated user name
-    string user = 2;
     // Public display name
-    string display_name = 3;
+    string display_name = 2;
     // Valid url string to the profile picture
-    string profile_picture = 4;
+    string profile_picture = 3;
     // Date-time that the user was created
-    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp created_at = 4;
     // Date-time that the user was updated
-    google.protobuf.Timestamp updated_at = 6;    
+    google.protobuf.Timestamp updated_at = 5;    
 }
