@@ -5,7 +5,7 @@ package myblog.proto.discussion;
 import "google/protobuf/timestamp.proto";
 import "proto/auth/user.proto";
 
-option go_package = "github.com/nomkhonwaan/myblog-proto-go/discussion";
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/discussion";
 
 // A written remark expressing an opinion or reaction.
 message Comment {

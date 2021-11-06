@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package myblog.proto.blog;
 
-option go_package = "github.com/nomkhonwaan/myblog-proto-go/blog";
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/blog";
 
 // The social network engagement information.
 message Engagement {

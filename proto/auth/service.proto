@@ -4,7 +4,7 @@ package myblog.proto.auth;
 
 import "proto/auth/user.proto";
 
-option go_package = "github.com/nomkhonwaan/myblog-proto-go/auth";
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/auth";
 
 // The authentication and authorization services definition.
 service AuthService {

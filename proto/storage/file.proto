@@ -4,7 +4,7 @@ package myblog.proto.storage;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/nomkhonwaan/myblog-proto-go/storage";
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/storage";
 
 // Object that keeps in the storage server.
 message File {

@@ -4,7 +4,7 @@ package myblog.proto.discussion;
 
 import "proto/discussion/comment.proto";
 
-option go_package = "github.com/nomkhonwaan/myblog-proto-go/discussion";
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/discussion";
 
 // The discussion service definition.
 service DiscussionService {
