@@ -4,6 +4,8 @@ package myblog.proto.auth;
 
 import "proto/auth/user.proto";
 
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/auth";
+
 // The authentication and authorization services definition.
 service AuthService {
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);

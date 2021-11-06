@@ -4,6 +4,8 @@ package myblog.proto.auth;
 
 import "google/protobuf/timestamp.proto";
 
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/auth";
+
 // Authorized user.
 message User {
     // Identifier of the user

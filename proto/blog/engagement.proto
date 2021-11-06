@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package myblog.proto.blog;
 
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/blog";
+
 // The social network engagement information.
 message Engagement {
   uint32 share_count = 1;

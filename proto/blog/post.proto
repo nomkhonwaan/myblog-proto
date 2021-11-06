@@ -8,6 +8,8 @@ import "proto/blog/engagement.proto";
 import "proto/blog/taxonomy.proto";
 import "proto/storage/file.proto";
 
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/blog";
+
 // Piece of content in the blog platform.
 message Post {
   // Identifier of the post

@@ -9,6 +9,8 @@ import "proto/blog/taxonomy.proto";
 import "proto/discussion/comment.proto";
 import "proto/storage/file.proto";
 
+option go_package = "github.com/nomkhonwaan/myblog-proto-go/blog";
+
 // The blog service definition.
 service BlogService {
     rpc ListCategories (google.protobuf.Empty) returns (ListCategoriesResponse);
