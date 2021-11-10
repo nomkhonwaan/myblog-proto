@@ -6,5 +6,5 @@ option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/blog";
 
 // The social network engagement information.
 message Engagement {
-  uint32 share_count = 1;
+    uint32 share_count = 1;
 }

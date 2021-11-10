@@ -8,24 +8,24 @@ option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/storage";
 
 // Object that keeps in the storage server.
 message File {
-  // Identifier of the file
-  string id = 1;
-  // An original file name
-  string file_name = 2;
-  // Valid url string composes with file name and id
-  string slug = 3;
-  // An uploaded file path
-  string uploaded_file_path = 4;
-  // A media type
-  string mime_type = 5;
-  // Name of the cloud object storage provider (e.g. s3, gcp, azure, etc.)
-  string provider = 6;
-  // Region or location where the object has been uploaded
-  string region = 7;
-  // Name of the bucket
-  string bucket = 8;
-  // Date-time that the file was uploaded
-  google.protobuf.Timestamp uploaded_at = 9;
-  // Date-time that the file was modified
-  google.protobuf.Timestamp modified_at = 10;
+    // Identifier of the file
+    string id = 1;
+    // An original file name
+    string file_name = 2;
+    // Valid url string composes with file name and id
+    string slug = 3;
+    // An uploaded file path
+    string uploaded_file_path = 4;
+    // A media type
+    string mime_type = 5;
+    // Name of the cloud object storage provider (e.g. s3, gcp, azure, etc.)
+    string provider = 6;
+    // Region or location where the object has been uploaded
+    string region = 7;
+    // Name of the bucket
+    string bucket = 8;
+    // Date-time that the file was uploaded
+    google.protobuf.Timestamp uploaded_at = 9;
+    // Date-time that the file was modified
+    google.protobuf.Timestamp modified_at = 10;
 }

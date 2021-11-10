@@ -17,5 +17,5 @@ message User {
     // Date-time that the user was created
     google.protobuf.Timestamp created_at = 4;
     // Date-time that the user was updated
-    google.protobuf.Timestamp updated_at = 5;    
+    google.protobuf.Timestamp updated_at = 5;
 }
