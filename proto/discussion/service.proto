@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package myblog.proto.discussion;
 
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
 import "proto/discussion/comment.proto";
 
 option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/discussion";
@@ -9,6 +11,10 @@ option go_package = "github.com/nomkhonwaan/myblog-proto-go/proto/discussion";
 // The discussion service definition.
 service DiscussionService {
     rpc CreateComment (CreateCommentRequest) returns (CreateCommentResponse);
+    rpc ListPublishedComments (ListPublishedCommentsRequest) returns (ListPublishedCommentsResponse);
+    rpc GetComment (GetCommentRequest) returns (GetCommentResponse);
+    rpc UpdateComment (UpdateCommentRequest) returns (UpdateCommentResponse);
+    rpc DeleteComment (DeleteCommentRequest) returns (google.protobuf.Empty);
 }
 
 message CreateCommentRequest {
@@ -17,4 +23,38 @@ message CreateCommentRequest {
 
 message CreateCommentResponse {
     myblog.proto.discussion.Comment comment = 1;
+}
+
+message ListPublishedCommentsRequest {
+    uint32 offset = 1;
+    uint32 limit = 2;
+    // Identifier of the parent comment or post that the comment belonging to
+    string parent_id = 3;
+    google.protobuf.FieldMask field_mask = 4;
+}
+
+message ListPublishedCommentsResponse {
+    repeated Comment comments = 1;
+}
+
+message GetCommentRequest {
+    string comment_id = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message GetCommentResponse {
+    Comment comment = 1;
+}
+
+message UpdateCommentRequest {
+    Comment comment = 1;
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message UpdateCommentResponse {
+    Comment comment = 1;
+}
+
+message DeleteCommentRequest {
+    string comment_id = 1;
 }
