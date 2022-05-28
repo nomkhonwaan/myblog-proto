@@ -21,7 +21,7 @@ message Comment {
     myblog.proto.auth.User author = 4;
     // Identifier of the parent comment,
     // this could be null if the comment is not belonging to the other
-    string parent_id = 5;
+    optional string parent_id = 5;
     // List of comments were replied to this comment
     repeated Comment children = 6;
     // Date-time that the comment was created
